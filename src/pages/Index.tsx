@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, ChevronDown } from "lucide-react";
+import { ArrowDown, ChevronDown, Linkedin, Play } from "lucide-react";
 import { useState } from "react";
 
 const Index = () => {
@@ -33,46 +32,71 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className="pt-24 pb-16 px-4">
-        <div className="container mx-auto text-center">
-          <div className="max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
-              AI-Powered AgriTech Solution
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold text-green-900 mb-6 leading-tight">
-              Plant Saathi AI –<br />
-              <span className="text-green-600">Your Smart Farming Companion</span>
-            </h1>
-            <p className="text-xl text-green-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Scan. Detect. Save Crops – AI-Powered Disease Detection & Yield Forecasting.
-              Built by students. Validated by farmers. Powered by AI.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg">
-                Join Early Access
-              </Button>
-              <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg">
-                Watch Demo
-              </Button>
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
+                AI-Powered AgriTech Revolution
+              </Badge>
+              <h1 className="text-5xl md:text-6xl font-bold text-green-900 mb-6 leading-tight">
+                Plant Saathi AI –<br />
+                <span className="text-green-600">Diagnose. Predict. Prosper.</span>
+              </h1>
+              <p className="text-xl text-green-700 mb-8 leading-relaxed">
+                Your AI-powered agri buddy transforming farming across India and Africa. 
+                Real-time disease detection, yield forecasting, and expert guidance in your pocket.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg">
+                  Schedule Investor Demo
+                </Button>
+                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg">
+                  Download Pitch Deck
+                </Button>
+              </div>
+              
+              <div className="flex items-center space-x-6 text-sm text-green-700">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>Live MVP Ready</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <span>Tested by 100+ Farmers</span>
+                </div>
+              </div>
             </div>
-            
-            {/* Phone Mockup */}
-            <div className="relative max-w-md mx-auto">
-              <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-[3rem] p-2">
-                <div className="bg-white rounded-[2.5rem] p-6">
-                  <div className="bg-green-50 rounded-2xl p-4 mb-4">
-                    <div className="w-full h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-lg mb-3 flex items-center justify-center">
-                      <span className="text-green-800 font-semibold">Leaf Analysis</span>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-semibold text-green-900 mb-1">Disease Detected</h3>
-                      <p className="text-sm text-green-700 mb-3">Leaf spot identified</p>
-                      <Button size="sm" className="bg-green-600 text-white w-full">
-                        Get Treatment Plan
-                      </Button>
+
+            {/* Video Demo Section */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-4 shadow-2xl">
+                <div className="bg-black rounded-2xl aspect-video relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-black/60 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform cursor-pointer">
+                        <Play className="w-8 h-8 ml-1" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">Live Disease Detection Demo</h3>
+                      <p className="text-sm opacity-90">Watch farmers using Plant Saathi AI</p>
                     </div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Feature highlights around video */}
+              <div className="absolute -top-4 -left-4 bg-white rounded-lg p-3 shadow-lg animate-fade-in">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs font-medium">95% Accuracy</span>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-lg p-3 shadow-lg animate-fade-in">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-xs font-medium">Offline Ready</span>
                 </div>
               </div>
             </div>
@@ -211,27 +235,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Market Opportunity */}
+      {/* Global Market Opportunity */}
       <section id="market" className="py-16 px-4 bg-gradient-to-r from-green-50 to-blue-50">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-green-900 mb-8">
-              Massive Market Opportunity
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">150M+</div>
-                <p className="text-green-800">Farmers in India</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-green-900 mb-4">
+                Massive Global Market Opportunity
+              </h2>
+              <p className="text-xl text-green-700">
+                Expanding from India to Africa and beyond
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="text-center">
+                <div className="text-5xl font-bold text-green-600 mb-2">150M+</div>
+                <p className="text-green-800 font-medium">Farmers in India</p>
+                <p className="text-sm text-green-600">Primary Market</p>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">$20B+</div>
-                <p className="text-green-800">Agri Advisory Market</p>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-orange-600 mb-2">70M+</div>
+                <p className="text-green-800 font-medium">Farmers in Africa</p>
+                <p className="text-sm text-orange-600">Expansion Target</p>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">Global</div>
-                <p className="text-green-800">Bangladesh, Vietnam, Kenya, LATAM</p>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-blue-600 mb-2">$45B+</div>
+                <p className="text-green-800 font-medium">Global AgriTech Market</p>
+                <p className="text-sm text-blue-600">Total Addressable</p>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-purple-600 mb-2">8+</div>
+                <p className="text-green-800 font-medium">Target Countries</p>
+                <p className="text-sm text-purple-600">Phase 1 Expansion</p>
               </div>
             </div>
+
+            <Card className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6 text-center">Global Expansion Roadmap</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <h4 className="font-semibold mb-3">Phase 1: India</h4>
+                    <p className="text-sm opacity-90">Punjab, Haryana, UP, Bihar</p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="font-semibold mb-3">Phase 2: Africa</h4>
+                    <p className="text-sm opacity-90">Kenya, Nigeria, Ghana, Ethiopia</p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="font-semibold mb-3">Phase 3: LATAM</h4>
+                    <p className="text-sm opacity-90">Brazil, Mexico, Colombia, Peru</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -269,43 +327,109 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Updated Team Section */}
       <section id="team" className="py-16 px-4 bg-green-50">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-green-900 text-center mb-8">
-              AgriTech Student Founder Team
-            </h2>
-            <p className="text-lg text-green-700 text-center mb-12">
-              We're looking for visionary partners to join our journey.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-green-900 mb-4">
+                Meet Our Founding Team
+              </h2>
+              <p className="text-xl text-green-700">
+                AgriTech innovators building the future of farming
+              </p>
+            </div>
             
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-green-800">RK</span>
-                </div>
-                <h3 className="text-xl font-bold text-green-900 mb-2">Raunak Kumar Patel (Vishu)</h3>
-                <p className="text-green-700 mb-4">Founder & Full-stack Engineer</p>
-                <p className="text-gray-600">
-                  Agri innovator building the future of farming with AI. 
-                  Expert in full-stack development and agricultural technology.
-                </p>
-              </div>
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Anand - Founder */}
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-white">AN</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-green-900 mb-2">Anand</h3>
+                  <p className="text-green-600 font-semibold mb-4">Founder & CEO</p>
+                  <p className="text-gray-600 mb-6">
+                    Visionary leader driving agricultural innovation and business strategy. 
+                    Expert in market expansion and stakeholder relations.
+                  </p>
+                  <a 
+                    href="#" 
+                    className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Himanshi - Co-founder */}
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-white">HI</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-green-900 mb-2">Himanshi</h3>
+                  <p className="text-blue-600 font-semibold mb-4">Co-founder & Research Head</p>
+                  <p className="text-gray-600 mb-6">
+                    Agricultural research specialist and data scientist. 
+                    Leading AI model development and crop advisory systems.
+                  </p>
+                  <a 
+                    href="#" 
+                    className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Raunak - Co-founder */}
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-8 text-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-white">RK</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-green-900 mb-2">Raunak Kumar</h3>
+                  <p className="text-purple-600 font-semibold mb-4">Co-founder & CTO</p>
+                  <p className="text-gray-600 mb-6">
+                    Full-stack engineer and tech architect. 
+                    Building scalable AI infrastructure and mobile applications.
+                  </p>
+                  <a 
+                    href="#" 
+                    className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    <span>Connect on LinkedIn</span>
+                  </a>
+                </CardContent>
+              </Card>
             </div>
 
+            {/* Team Achievements */}
             <Card className="bg-gradient-to-r from-green-600 to-green-700 text-white text-center">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Tested by 100+ Farmers</h3>
+                <h3 className="text-2xl font-bold mb-4">Validated by Real Farmers</h3>
                 <p className="text-lg mb-6">
-                  During TechConclave 2025, Galgotias University
+                  Tested by 100+ farmers during TechConclave 2025, Galgotias University
                 </p>
-                <Button 
-                  size="lg" 
-                  className="bg-white text-green-600 hover:bg-gray-100"
-                >
-                  Request Our Pitch Deck
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-green-600 hover:bg-gray-100"
+                  >
+                    Schedule Investor Meeting
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-white text-white hover:bg-white hover:text-green-600"
+                  >
+                    Request Pitch Deck
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -324,22 +448,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-600 to-green-700">
+      {/* Enhanced CTA Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Transform Agriculture?
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Transform Global Agriculture?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Join us in revolutionizing farming with AI. Let's grow together.
+              Join us in revolutionizing farming across India and Africa with AI. 
+              Let's grow together and feed the world.
             </p>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">₹25-50L</div>
+                <div className="text-sm opacity-90">Pre-seed Funding</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">8 Countries</div>
+                <div className="text-sm opacity-90">Expansion Plan</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold">220M+</div>
+                <div className="text-sm opacity-90">Target Farmers</div>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4">
-                Schedule a Demo
+                Schedule Investor Demo
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-4">
-                Download Pitch Deck
+                Download Complete Pitch Deck
               </Button>
             </div>
           </div>
