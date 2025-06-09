@@ -802,7 +802,7 @@ const Index = () => {
                     </Button>
                   </div>
                 </form>
-              </div>
+              </CardContent>
             </Card>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
