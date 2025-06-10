@@ -1,21 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ChevronDown, Linkedin, Play, Users, Shield, Wifi, CheckCircle, TrendingUp, Globe, Target, Calendar, DollarSign, Award, Zap } from "lucide-react";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+  return <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-green-100 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/87cb47b6-57ce-49f9-b493-3f44fafd19f5.png" 
-              alt="Plant Saathi AI Logo" 
-              className="h-8 w-auto"
-            />
+            <img src="/lovable-uploads/87cb47b6-57ce-49f9-b493-3f44fafd19f5.png" alt="Plant Saathi AI Logo" className="h-8 w-auto" />
             <span className="text-xl font-bold text-green-800">Plant Saathi AI</span>
           </div>
           <div className="hidden md:flex space-x-8">
@@ -383,9 +376,7 @@ const Index = () => {
                   <p className="text-gray-600 mb-6">
                     Product visionary, tech builder, and agri-missionary. Leads product development, innovation, and go-to-market.
                   </p>
-                  <Button 
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full"
-                  >
+                  <Button className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full">
                     <Linkedin className="w-4 h-4 mr-2" />
                     Connect on LinkedIn
                   </Button>
@@ -399,12 +390,8 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-green-900 mb-2">Himanshi</h3>
                   <p className="text-blue-600 font-semibold mb-4">Co-founder & Head of Research</p>
-                  <p className="text-gray-600 mb-6">
-                    Plant Pathology specialist driving model accuracy and crop advisory innovations.
-                  </p>
-                  <Button 
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full"
-                  >
+                  <p className="text-gray-600 mb-6">Head of Research, leading model accuracy testing and pioneering next-gen crop advisory solutions.</p>
+                  <Button className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full">
                     <Linkedin className="w-4 h-4 mr-2" />
                     Connect on LinkedIn
                   </Button>
@@ -421,9 +408,7 @@ const Index = () => {
                   <p className="text-gray-600 mb-6">
                     Coordinates field research, partnership development, and user feedback collection.
                   </p>
-                  <Button 
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full"
-                  >
+                  <Button className="bg-blue-600 text-white hover:bg-blue-700 transition-colors w-full">
                     <Linkedin className="w-4 h-4 mr-2" />
                     Connect on LinkedIn
                   </Button>
@@ -527,21 +512,9 @@ const Index = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-green-900 mb-6">Get Involved – Investors, Let's Talk</h3>
                 <form className="grid md:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <input 
-                    type="text" 
-                    placeholder="Organization" 
-                    className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
+                  <input type="text" placeholder="Your Name" className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+                  <input type="email" placeholder="Email Address" className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+                  <input type="text" placeholder="Organization" className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
                   <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                     <option>Investment Interest</option>
                     <option>Angel Investor</option>
@@ -549,11 +522,7 @@ const Index = () => {
                     <option>Strategic Partner</option>
                     <option>Government/NGO</option>
                   </select>
-                  <textarea 
-                    placeholder="Message" 
-                    rows={4}
-                    className="md:col-span-2 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  ></textarea>
+                  <textarea placeholder="Message" rows={4} className="md:col-span-2 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
                   <div className="md:col-span-2">
                     <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white py-4">
                       Request Investor Deck & Schedule Call
@@ -580,11 +549,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/87cb47b6-57ce-49f9-b493-3f44fafd19f5.png" 
-                alt="Plant Saathi AI Logo" 
-                className="h-8 w-auto"
-              />
+              <img src="/lovable-uploads/87cb47b6-57ce-49f9-b493-3f44fafd19f5.png" alt="Plant Saathi AI Logo" className="h-8 w-auto" />
               <span className="text-xl font-bold">Plant Saathi AI</span>
             </div>
             <div className="flex space-x-6 text-sm">
@@ -604,8 +569,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
