@@ -2,7 +2,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ChevronDown, Linkedin, Play, Users, Shield, Wifi, CheckCircle, TrendingUp, Globe, Target, Calendar, DollarSign, Award, Zap } from "lucide-react";
+import React from "react";
+import HeroSection from "./sections/HeroSection";
+import RoadmapSection from "./sections/RoadmapSection";
+import LiveMetricsSection from "./sections/LiveMetricsSection";
+
 const Index = () => {
+  const ctaVariants = [
+    "Grab Your Pre-Seed Spot",
+    "Download Investor Deck",
+    "Book Your Pilot Slot"
+  ];
+  const [ctaVariant, setCtaVariant] = React.useState(ctaVariants[0]);
+  const [pilots, setPilots] = React.useState(12);
+  const [images, setImages] = React.useState(1432);
+
+  React.useEffect(() => {
+    setCtaVariant(ctaVariants[Math.floor(Math.random() * ctaVariants.length)]);
+    // Optionally animate counters here
+  }, []);
+
   return <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-green-100 z-50">
@@ -21,81 +40,14 @@ const Index = () => {
             <a href="#investors" className="text-green-700 hover:text-green-900 transition-colors">Investors</a>
           </div>
           <Button className="bg-green-600 hover:bg-green-700 text-white">
-            Request Investor Deck
+            <span className="ab-test-cta">{ctaVariant}</span>
           </Button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="about" className="pt-24 pb-16 px-4">
-        <div className="container mx-auto">
-          {/* Visceral Stat */}
-          <div className="text-center mb-8">
-            <div className="inline-block bg-red-100 text-red-800 px-4 py-2 rounded-lg border border-red-200 text-lg font-semibold">
-              Agriculture loses billions to preventable crop failures
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-left">
-              <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
-                Multilingual AI-Driven Crop Advisory System
-              </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold text-green-900 mb-6 leading-tight">
-                Plant Saathi AI –<br />
-                <span className="text-green-600">Diagnose. Predict. Prosper.</span>
-              </h1>
-              <p className="text-xl text-green-700 mb-6 leading-relaxed">
-                The multilingual, AI-driven crop advisory system for every farmer — everywhere.
-              </p>
-              <p className="text-lg text-green-600 mb-8">
-                Built to work offline, voice-enabled, and globally scalable — Plant Saathi AI empowers the next billion farmers.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg">
-                  Request Investor Deck
-                </Button>
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg">
-                  Schedule Demo Call
-                </Button>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-4 text-sm text-green-700">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">90%+</div>
-                  <div>Accuracy Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">Offline</div>
-                  <div>Ready Mode</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">500M+</div>
-                  <div>Target Farmers</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Video Demo Section */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-4 shadow-2xl">
-                <div className="bg-black rounded-2xl aspect-video relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-black/60 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform cursor-pointer">
-                        <Play className="w-8 h-8 ml-1" />
-                      </div>
-                      <h3 className="text-lg font-semibold mb-2">Live Disease Detection</h3>
-                      <p className="text-sm opacity-90">See Plant Saathi AI in action</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection ctaVariant={ctaVariant} />
+      <RoadmapSection />
+      <LiveMetricsSection pilots={pilots} images={images} />
 
       {/* Problem Section */}
       <section id="problem" className="py-16 px-4 bg-white">
@@ -109,7 +61,7 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-red-800 mb-3">₹90,000+ Cr Annual Loss</h3>
                   <p className="text-red-700">
-                    Farmers lose billions annually due to late or wrong disease diagnosis and poor crop management decisions.
+                    <strong>1 in 3 farmers misdiagnose crops.</strong> Farmers lose billions annually due to late or wrong disease diagnosis.
                   </p>
                 </CardContent>
               </Card>
@@ -117,7 +69,7 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-red-800 mb-3">Limited Expert Access</h3>
                   <p className="text-red-700">
-                    Soil health is poorly understood, leading to overuse of inputs and reduced productivity.
+                    <strong>₹90,000 Cr annual loss = broken advisory.</strong> Soil health is poorly understood, leading to reduced productivity.
                   </p>
                 </CardContent>
               </Card>
@@ -138,6 +90,22 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+            
+            {/* Partnerships & LOIs */}
+            <div className="max-w-4xl mx-auto mt-12 bg-white rounded-xl shadow-sm p-6 text-center">
+              <h3 className="text-xl font-semibold text-green-800 mb-4">Partnerships & LOIs</h3>
+              <div className="flex flex-wrap items-center justify-center gap-8">
+                <div className="flex flex-col items-center">
+                  <Badge variant="outline" className="bg-blue-50 mb-2">In Talks</Badge>
+                  <p className="text-gray-700">3 state agri-boards</p>
+                </div>
+                <div className="h-12 border-r border-gray-200"></div>
+                <div className="flex flex-col items-center">
+                  <Badge variant="outline" className="bg-blue-50 mb-2">Partnering Soon</Badge>
+                  <p className="text-gray-700">IBM Research</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -147,7 +115,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-green-900 text-center mb-4">
-              Our Solution: One App. Many Powers.
+              Our Solution: One App. Total Support.
             </h2>
             <p className="text-xl text-green-700 text-center mb-12">
               Smart, image-based plant health and productivity platform
@@ -159,7 +127,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">👁️</span>
                   </div>
-                  <h3 className="font-semibold text-green-800 mb-2">Snap & Diagnose</h3>
+                  <h3 className="font-semibold text-green-800 mb-2">Snap & Diagnose → 90% accuracy</h3>
                   <p className="text-green-700 text-sm">
                     Detect diseases instantly using phone camera and get location-specific treatment.
                   </p>
@@ -170,7 +138,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">🧪</span>
                   </div>
-                  <h3 className="font-semibold text-green-800 mb-2">Soil Analysis</h3>
+                  <h3 className="font-semibold text-green-800 mb-2">Soil Analysis → Save ₹4,000/acre</h3>
                   <p className="text-green-700 text-sm">
                     Upload photo or lab report, decode with smart AI and get fertilizer recommendations.
                   </p>
@@ -192,7 +160,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl">👩‍🌾</span>
                   </div>
-                  <h3 className="font-semibold text-green-800 mb-2">Expert Advice</h3>
+                  <h3 className="font-semibold text-green-800 mb-2">Expert Advice → Live chat in your language</h3>
                   <p className="text-green-700 text-sm">
                     Ask real agri-experts questions in your language through chat or voice.
                   </p>
@@ -446,6 +414,30 @@ const Index = () => {
       <section id="investors" className="py-16 px-4 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="container mx-auto">
           <div className="max-w-6xl mx-auto text-center text-white">
+            {/* Risk Mitigation */}
+            <Card className="bg-white/10 backdrop-blur-md mb-8">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6">Risks & Mitigations</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <Shield className="w-8 h-8 mx-auto mb-2" />
+                    <p className="font-semibold mb-2">Data privacy</p>
+                    <p className="text-sm opacity-90">End-to-end encryption</p>
+                  </div>
+                  <div className="text-center">
+                    <Users className="w-8 h-8 mx-auto mb-2" />
+                    <p className="font-semibold mb-2">Regulatory</p>
+                    <p className="text-sm opacity-90">Local agri-board partnerships</p>
+                  </div>
+                  <div className="text-center">
+                    <CheckCircle className="w-8 h-8 mx-auto mb-2" />
+                    <p className="font-semibold mb-2">Sensor reliability</p>
+                    <p className="text-sm opacity-90">Redundant QA processes</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
             <h2 className="text-4xl font-bold mb-6">
               Funding Ask: ₹25–50 Lakhs (Pre-Seed)
             </h2>
@@ -486,7 +478,7 @@ const Index = () => {
             <Card className="bg-white/10 backdrop-blur-md mb-8">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Use of Funds (₹50L)</h3>
-                <div className="grid md:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-4 gap-6 mb-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2">40%</div>
                     <p className="font-semibold">Product Development</p>
@@ -502,6 +494,14 @@ const Index = () => {
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2">10%</div>
                     <p className="font-semibold">Infra + Legal</p>
+                  </div>
+                </div>
+                <div className="bg-white/20 p-4 rounded-lg">
+                  <div className="flex items-center justify-center gap-4">
+                    <DollarSign className="w-6 h-6" />
+                    <p className="font-semibold">₹200 revenue per farmer per season</p>
+                    <TrendingUp className="w-6 h-6" />
+                    <p className="font-semibold">500M TAM = ₹10,000 Cr potential</p>
                   </div>
                 </div>
               </CardContent>
@@ -525,7 +525,7 @@ const Index = () => {
                   <textarea placeholder="Message" rows={4} className="md:col-span-2 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
                   <div className="md:col-span-2">
                     <Button size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white py-4">
-                      Request Investor Deck & Schedule Call
+                      <span className="ab-test-cta">Request Investor Deck & Schedule Call</span>
                     </Button>
                   </div>
                 </form>
@@ -534,11 +534,46 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4">
-                Download Pitch Deck (PDF)
+                <span className="ab-test-cta">Download Pitch Deck (PDF)</span>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-4">
                 Schedule 30-min Call
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Investor Steps */}
+      <section className="py-12 px-4 bg-green-800 text-white">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-8">Your Investment Journey</h3>
+            <div className="grid grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="h-12 w-12 rounded-full bg-white text-green-800 font-bold flex items-center justify-center mx-auto mb-4">1</div>
+                <p className="font-semibold">Download Deck</p>
+                <div className="mt-4">
+                  <svg width="60" height="10" className="mx-auto">
+                    <line x1="0" y1="5" x2="60" y2="5" stroke="white" strokeWidth="2" strokeDasharray="2" />
+                    <polygon points="60,5 50,0 50,10" fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="h-12 w-12 rounded-full bg-white text-green-800 font-bold flex items-center justify-center mx-auto mb-4">2</div>
+                <p className="font-semibold">Book 15-min Call</p>
+                <div className="mt-4">
+                  <svg width="60" height="10" className="mx-auto">
+                    <line x1="0" y1="5" x2="60" y2="5" stroke="white" strokeWidth="2" strokeDasharray="2" />
+                    <polygon points="60,5 50,0 50,10" fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="h-12 w-12 rounded-full bg-white text-green-800 font-bold flex items-center justify-center mx-auto mb-4">3</div>
+                <p className="font-semibold">Sign Termsheet</p>
+              </div>
             </div>
           </div>
         </div>
